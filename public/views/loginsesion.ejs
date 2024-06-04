@@ -1,0 +1,22 @@
+<%- include('includes/header') %>
+<div class="containercontainercontainerlogin">
+<div class="containercontainerlogin">
+<div class="containerlogin">
+    
+    <h2>Iniciar sesión</h2>
+    <form action="/loginsesion" method="post">
+        <label for="email">Correo electronico:</label>
+        <input type="email" name="email" id="email" placeholder="Ingrese su email..." required>
+        <label for="contraseña">Contraseña Usuario:</label>
+        <input type="password" name="contraseña" id="contraseña" placeholder="Ingrese su password..." required>
+        <label for="codigo_de_compra">Codigo de Compra:</label>
+        <input type="text" name="codigo_de_compra" id="codigo_de_compra" placeholder="Ingrese su codigo_de_compra..." required>
+        <button type="submit">Iniciar</button>
+    </form>
+    <p>No esta registrada su compra? <a href="/registros">Regístrela con codigo de compra del pedido, enviado a su correo, para que le sea permitido el ingreso</a></p>
+    <a href="/">Regresar al inicio</a>
+</div>
+</div>
+</div>
+
+<%- include('includes/footer') %>
