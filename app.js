@@ -89,6 +89,44 @@ app.post('/loginsesion', async (req, res) => {
     console.log(typeof confirmacion);
     console.log(confirmacion);
     let k = 0;
+//El otro mio y del profe
+/*
+try{
+    db.query('SELECT codigo_compra FROM pedidos', [], async (err, result,campos) => {
+            var valor = JSON.parse(JSON.stringify(result));
+            console.log(valor);
+            console.log(valor.length);
+            let i = 0;
+            let h = valor.length;
+            console.log(typeof h);
+            h = h - 1;
+            comparador = valor[i].codigo_compra;
+            while (confirmacion != comparador) {
+                i = i + 1;
+                console.log(i);
+                console.log(h);
+                if (i <= h){
+                    comparador = valor[i].codigo_compra;
+                    console.log("ciclo");
+                }else{if (k == 0) {
+                    return res.status(404).send('Orden no encontrada');
+                    //res.redirect('/');
+                     
+                }
+                    
+                } 
+            } 
+    
+    });    
+    }catch (error) {
+                  //res.redirect('/');
+                  res.status(500).send('Error del servidor');    
+            }*/
+    
+    
+
+
+//la mia
     db.query('SELECT codigo_compra FROM pedidos', [], async (err, result,campos) => {
         var valor = JSON.parse(JSON.stringify(result));
         console.log(valor);
@@ -118,7 +156,29 @@ app.post('/loginsesion', async (req, res) => {
             }    
         }
     });
-        
+        //la del profe
+    /*app.post('/loginsesion', async (req, res) => {
+        const { email, contraseña, codigo_de_compra } = req.body;
+        const confirmacion = Number(codigo_de_compra);
+    
+        try {
+            db.query('SELECT codigo_compra FROM pedidos WHERE codigo_compra = ?', [confirmacion], (err, result) => {
+                if (err) {
+                    console.error('Error al realizar la consulta:', err);
+                    return res.status(500).send('Error del servidor');
+                }
+                if (result.length === 0) {
+                    return res.status(404).send('Orden no encontrada');
+                }
+                res.send('Orden encontrada');
+            });
+        } catch (error) {
+            console.error('Error:', error.message);
+            res.status(500).send('Error del servidor');
+        }
+    });*/
+
+
     db.query('SELECT * FROM compradores WHERE email = ?', [email], async (err, result) => {
         
         if(err){
