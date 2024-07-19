@@ -2,7 +2,26 @@
 
 <div class="container">
     <h2>Registro de Compras</h2>
+    
+    <% if (message) { %>
+        <div class="alert">
+            <%- message %>
+            <button class = "close-btn" onclick = "this.parentElement.style.display = 'none';">&times;</button>
+              <script>
+              function regreso(){
+                window.location.href = '/';
+              }
+              setTimeout(regreso, 6000);
+              </script>
+        </div>
+        
+
+    <% } %>
+    
+    
     <form action="/registros" method="post">
+
+
         <label for="nombre">Nombre:</label>
         <input type="text" name="nombre" id="nombre" placeholder="Ingrese su nombre..." required>
         <label for="apellido">Apellido:</label>

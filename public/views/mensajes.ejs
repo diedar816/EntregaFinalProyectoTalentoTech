@@ -1,0 +1,80 @@
+<%- include('includes/header') %>
+
+    <div class="container">
+
+        <script src = ../../app.js></script>
+
+        
+
+        
+        <form action="/mensajes" method="post">
+
+            
+
+            <label for="mensaje">Envíe su mensaje:</label>
+
+            <p></p>
+
+            <textarea name="mensaje" rows="10" cols="40">Escribe aquí tus comentarios</textarea>
+
+            <p></p>
+
+            <button type="submit">Enviar</button>
+
+            <p></p>
+            
+        </form>
+
+        
+    
+
+        <div>
+
+            <label for="mensaje">Respuesta:</label>
+
+            <p></p>
+
+            <form action="/mensajes" method="post">
+
+                
+    
+                <p></p>
+    
+                <input type="number" name="respuesta" id="respuesta" placeholder="respuesta">
+
+    
+                <p></p>
+    
+                <button onclick='verRespuestasMensajes()'>Ver respuestas</button>
+    
+                <p></p>
+                
+            </form> 
+
+            <p>   </p>
+
+            
+
+            <p></p>
+
+        
+
+        </div>
+        
+        
+        <p>"Estamos prestos a atenderle cualquier inquietud por nuestros canales de atencion"</p>
+
+        <a href="/">Regresar al inicio</a>
+    </div>
+    <!--<script src = ../../app.js></script>-->
+    <!--<script src = public/views/otrapp.js></script>-->
+    <script>
+
+    function verRespuestasMensajes(){
+    console.log('Para  intentar ver la respuesta');
+    }
+    </script>
+
+
+
+<%- include('includes/footer') %>

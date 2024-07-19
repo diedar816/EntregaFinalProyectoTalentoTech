@@ -1,0 +1,53 @@
+En el App
+
+function AEjecutar() {
+
+const prueba = 2 + 2;
+
+
+}
+
+
+
+En el HTML
+
+<button onclick = "function AEjecutar()">Ver respuesta a los mensajes</button>
+
+
+<script src = "mensajes"></script>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick = 'AEjecutar()'>Ver respuesta a los mensajes</button>
+        <script>
+            function AEjecutar(){const prueba = 2 + 2;
+                console.log(prueba);
+            alert("Hola")}
+        </script>
+            <script src = "index"></script>
+</body>
+</html>
+
+/*function AEjecutar() {
+    const prueba = 2 + 2;
+    console.log(prueba);
+    }*/
+
+
+https://www.freecodecamp.org/espanol/news/boton-html-onclick-tutorial-de-evento-de-clic-en-javascript/
+
+https://www.youtube.com/watch?v=Yjg8adW4nBA
+
+
+
+
+
+
+

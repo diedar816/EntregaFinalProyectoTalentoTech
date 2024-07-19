@@ -26,6 +26,14 @@ CONSTRAINT pk_pedidos PRIMARY KEY (id),
 CONSTRAINT fk_compradores FOREIGN KEY (compradores_id) REFERENCES compradores(id),
 CONSTRAINT fk_productos FOREIGN KEY (productos_id) REFERENCES productos(id)
 );
+CREATE TABLE mensajes(
+id int(10) auto_increment not null,
+compradores_id int(10) not null,
+mensaje varchar(255) not null,
+respuesta varchar(255) not null,
+CONSTRAINT pk_mensajes PRIMARY KEY (id),
+CONSTRAINT fk_compradores FOREIGN KEY (compradores_id) REFERENCES compradores(id)
+);
 
 /*Carga de Productos*/
 
@@ -48,4 +56,12 @@ INSERT INTO pedidos values(NULL, 1, 1, 5842, 5,'2018-01-10');
 INSERT INTO pedidos values(NULL, 2, 2, 6124, 7,'2013-01-10');
 INSERT INTO pedidos values(NULL, 3, 3, 7983, 8,'2012-01-10');
 INSERT INTO pedidos values(NULL, 4, 4, 8126, 9,'2010-01-10');
+
+/*Carga de Mensajes*/
+
+INSERT INTO mensajes values(NULL, 1, 'primer mensaje', 'primera respuesta', 1);
+INSERT INTO mensajes values(NULL, 3, 'segundo mensaje', 'segunda respuesta', 2);
+
+
+
 
