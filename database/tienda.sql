@@ -1,38 +1,38 @@
 CREATE TABLE productos(
-id int(11) auto_increment not null,
-tipo_producto varchar(180) not null,
-valor int(20) not null,
-CONSTRAINT pk_productos PRIMARY KEY (id)
+    id int(11) auto_increment not null,
+    tipo_producto varchar(180) not null,
+    valor int(20) not null,
+    CONSTRAINT pk_productos PRIMARY KEY (id)
 );
 CREATE TABLE compradores(
-id int(10) auto_increment not null,
-nombre varchar(100) not null,
-apellido varchar(150) not null,
-telefono varchar(100) not null,
-email varchar(100) not null,
-dirección varchar(200) not null,
-codigoCompraCliente int (10) not null,
-contraseña varchar(100) not null,
-CONSTRAINT pk_clientes PRIMARY KEY (id)
+    id int(10) auto_increment not null,
+    nombre varchar(100) not null,
+    apellido varchar(150) not null,
+    telefono varchar(100) not null,
+    email varchar(100) not null,
+    dirección varchar(200) not null,
+    codigoCompraCliente int (10) not null,
+    contraseña varchar(100) not null,
+    CONSTRAINT pk_clientes PRIMARY KEY (id)
 );
 CREATE TABLE pedidos(
-id int(10) auto_increment not null,
-compradores_id int(10) not null,
-productos_id int(10) not null,
-codigo_compra int(10) not null,
-cantidad int(255) not null, 
-fecha date,
-CONSTRAINT pk_pedidos PRIMARY KEY (id),
-CONSTRAINT fk_compradores FOREIGN KEY (compradores_id) REFERENCES compradores(id),
-CONSTRAINT fk_productos FOREIGN KEY (productos_id) REFERENCES productos(id)
+    id int(10) auto_increment not null,
+    compradores_id int(10) not null,
+    productos_id int(10) not null,
+    codigo_compra int(10) not null,
+    cantidad int(255) not null, 
+    fecha date,
+    CONSTRAINT pk_pedidos PRIMARY KEY (id),
+    CONSTRAINT fk_compradores FOREIGN KEY (compradores_id) REFERENCES compradores(id),
+    CONSTRAINT fk_productos FOREIGN KEY (productos_id) REFERENCES productos(id)
 );
 CREATE TABLE mensajes(
-id int(10) auto_increment not null,
-compradores_id int(10) not null,
-mensaje varchar(255) not null,
-respuesta varchar(255) not null,
-CONSTRAINT pk_mensajes PRIMARY KEY (id),
-CONSTRAINT fk_compradores FOREIGN KEY (compradores_id) REFERENCES compradores(id)
+    id int(10) auto_increment not null,
+    compradores_id int(10) not null,
+    mensaje varchar(255) not null,
+    respuesta varchar(255) not null,
+    CONSTRAINT pk_mensajes PRIMARY KEY (id),
+    CONSTRAINT fk_compradores FOREIGN KEY (compradores_id) REFERENCES compradores(id)
 );
 
 /*Carga de Productos*/
