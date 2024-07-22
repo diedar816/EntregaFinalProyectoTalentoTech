@@ -101,12 +101,11 @@ app.post('/mensajes', async (req,res) => {
 });
 
 //Ruta para ver las respuestas en el formulario de mensajes
-function verRespuestasMensajes(){
-console.log('Para  intentar ver la respuesta');
-/*app.post('/mensajes', (req, res) => {
+
+app.post('/respuestas', (req, res) => {
     console.log('Para  intentar ver la respuesta');  
- //   const {} = req.body;
-    db.query('SELECT respuesta FROM mensajes WHERE mensajes.compradores_id = ? && mensajes.pedidos_id = ?', [pñ,prp], (err, result) => {
+    const {} = req.body;
+    /*db.query('SELECT respuesta FROM mensajes WHERE mensajes.compradores_id = ? && mensajes.pedidos_id = ?', [pñ,prp], (err, result) => {
         if(err) {
             console.log(err);
             return res.status(500).send('Error al consultar respuesta');
@@ -119,9 +118,9 @@ console.log('Para  intentar ver la respuesta');
             //res.render('mensajes', {respuestaentregada: result[0].respuesta});
             //res.send('Respuesta consultada con exito!');
         }
-    });
-});*/
-}
+    });*/
+});
+
 
 //Ruta para inicio de sesion y muestra de resultados en consultas con los formularios loginsesion y consultas
 
