@@ -45,7 +45,8 @@
     
                 <p></p>
     
-                <button id="ver">Ver respuestas</button>
+                <button id="ver" data-comprador-id="6" data-pedido-id="5" >Ver respuestas</button>
+
     
                 <p></p>
                 
@@ -69,21 +70,40 @@
     <!--<script src = ../../app.js></script>-->
     <!--<script src = public/views/otrapp.js></script>-->
     <script>
-        console.log(document.getElementById("ver"));
-      document.getElementById("ver").onclick = async (e) =>{
-        e.preventDefault()
-        
-        const res = await fetch("/repuestas", {
+        document.getElementById("ver").onclick = async (e) => {
+    e.preventDefault();
+    console.log("Iniciando envío de datos");
+
+    //const button = e.target;
+    //const compradores_id = button.dataset.compradorId;
+    //const pedidos_id = button.dataset.pedidoId;
+
+    try {
+        const compradores_id = 6; 
+        const pedidos_id = 5;
+        const res = await fetch("/respuestas", {
             method: "POST",
             body: JSON.stringify({
-                id_producto: 1,
-                id_comentario: 1
+                compradores_id: compradores_id,
+                pedidos_id: pedidos_id
             }),
             headers: {
                 "Content-Type": "application/json"
             }
-        })
+        });
+
+        if (!res.ok) {
+            throw new Error(`Http error status: ${res.status}`);
+        }
+
+        const data = await res.json();
+        console.log("Respuesta recibida:", data);
+
+    } catch (error) {
+        console.error("Error al enviar datos", error);
     }
+};
+        
     </script>
 
 

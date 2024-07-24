@@ -104,8 +104,8 @@ app.post('/mensajes', async (req,res) => {
 
 app.post('/respuestas', (req, res) => {
     console.log('Para  intentar ver la respuesta');  
-    const {} = req.body;
-    /*db.query('SELECT respuesta FROM mensajes WHERE mensajes.compradores_id = ? && mensajes.pedidos_id = ?', [pñ,prp], (err, result) => {
+    const {compradores_id,pedidos_id} = req.body;
+    db.query('SELECT respuesta FROM mensajes WHERE mensajes.compradores_id = ? AND mensajes.pedidos_id = ?', [compradores_id, pedidos_id], (err, result) => {
         if(err) {
             console.log(err);
             return res.status(500).send('Error al consultar respuesta');
@@ -118,7 +118,7 @@ app.post('/respuestas', (req, res) => {
             //res.render('mensajes', {respuestaentregada: result[0].respuesta});
             //res.send('Respuesta consultada con exito!');
         }
-    });*/
+    });
 });
 
 
